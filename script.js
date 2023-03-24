@@ -4,17 +4,8 @@ console.log(grid);
 let lines = 16;
 let rows = lines;
 
-function changeWidth() {
-    let x = document.querySelectorAll(".cell");
-    console.log(x);
-
-    for (let i = 0; i < x.length; ++i) {
-        x[i].style.width = ((960 / lines).toString()).concat("px");
-        x[i].style.height = ((960 / lines).toString()).concat("px");
-    }
-}
-
-function createGrid() {
+function createGrid(lines, rows) {
+    grid.innerHTML = "";
     for (let i = 0; i < lines; ++i) {
         let line = document.createElement("div");
         line.classList.add("line");
@@ -26,12 +17,19 @@ function createGrid() {
         grid.appendChild(line);
     }
 
-    changeWidth();
+    changeWidth(lines);
+    eventListenerColorChange();
 }
 
 
-createGrid();
+createGrid(lines, rows);
 
+function CreateNewGrid() {
+    let gridLines = document.querySelector('#buttonCreateGrid').value;
+    if (gridLines >= 16 && gridLines <= 100) {
+        createGrid(gridLines, gridLines);
+    }
+}
 
 
 let mouseDown = false
@@ -51,10 +49,22 @@ function changeColorCell(e) {
     e.target.style.backgroundColor = color;
 }
 
-const cells = document.querySelectorAll(".cell");
-cells.forEach(item => {
-    item.addEventListener('mouseover', changeColorCell)
-})
-cells.forEach(item => {
-    item.addEventListener('mousedown', changeColorCell)
-})
+function changeWidth(lines) {
+    let x = document.querySelectorAll(".cell");
+    console.log(x);
+
+    for (let i = 0; i < x.length; ++i) {
+        x[i].style.width = ((960 / lines).toString()).concat("px");
+        x[i].style.height = ((960 / lines).toString()).concat("px");
+    }
+}
+
+function eventListenerColorChange() {
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(item => {
+        item.addEventListener('mouseover', changeColorCell)
+    })
+    cells.forEach(item => {
+        item.addEventListener('mousedown', changeColorCell)
+    })
+}

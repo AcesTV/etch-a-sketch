@@ -42,7 +42,7 @@ body {
 #colorPicker {
     display: flex;
     justify-content: center;
-    margin-top: 128px;
+    margin-top: 32px;
     width: 960px;
     height: 60px;
 }
