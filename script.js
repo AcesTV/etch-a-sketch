@@ -1,6 +1,22 @@
 const grid = document.querySelector("#grid");
-const gridHeight = grid.clientHeight;
+let gridHeight = window.innerHeight / 2;
 console.log(grid);
+const colorPicker = document.querySelector("#colorPicker");
+
+function updateSize() {
+    gridHeight = window.innerHeight / 2;
+    grid.style.height = gridHeight;
+    grid.style.width = gridHeight;
+    colorPicker.style.width = window.innerWidth / 1.5 + "px";
+    colorPicker.style.height = window.innerHeight / 20 + "px";
+
+    document.querySelectorAll(".colors").forEach(item => {
+        item.style.height = window.innerHeight / 20 + "px";
+        item.style.width = window.innerHeight / 20 + "px";
+    })
+    changeWidth(lines);
+}
+window.addEventListener("resize", updateSize);
 
 let lines = 16;
 let rows = lines;
@@ -69,3 +85,6 @@ function eventListenerColorChange() {
         item.addEventListener('mousedown', changeColorCell)
     })
 }
+
+
+updateSize();

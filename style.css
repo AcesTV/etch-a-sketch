@@ -8,6 +8,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    min-height: 700px;
 }
 
 
@@ -25,8 +26,8 @@ body {
     display: grid;
     grid-template-columns: auto;
     align-content: center;
-    width: 640px;
-    height: 640px;
+    min-width: 50vh;
+    min-height: 50vh;
 }
 
 .line {
@@ -39,17 +40,21 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+#inputCreateGrid {
+    margin-bottom: 32px;
+}
+
 #colorPicker {
     display: flex;
     justify-content: center;
     margin-top: 32px;
-    width: 960px;
-    height: 60px;
+    min-width: 512px;
+    min-height: 32px;
 }
 
 .colors {
-    width: 60px;
-    height: 60px;
+    min-width: 32px;
+    min-height: 32px;
 }
 
 .colorWhite {
