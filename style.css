@@ -15,7 +15,7 @@ body {
     display: flex;
     height: 100%;
     width: 100%;
-    background-color: aliceblue;
+    background-color: rgb(155, 180, 202);
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -35,16 +35,16 @@ body {
 
 
 .cell {
-    border: 1px solid black;
-    background-color: red;
+    /*border: 1px solid black;*/
+    background-color: rgb(255, 255, 255);
 }
 
 #colorPicker {
     display: flex;
+    justify-content: center;
     margin-top: 128px;
     width: 960px;
     height: 60px;
-    background-color: blue;
 }
 
 .colors {
@@ -52,22 +52,50 @@ body {
     height: 60px;
 }
 
-#colorWhite {
+.colorWhite {
     background-color: white;
 }
 
-#colorBlack {
+.colorBlack {
     background-color: black;
 }
 
-#colorBlue {
+.colorBlue {
     background-color: #27b7de;
 }
 
-#colorRed {
+.colorRed {
     background-color: #c64343;
 }
 
-#colorYellow {
+.colorYellow {
     background-color: #f2dc23;
+}
+
+.colorCrimson {
+    background-color: crimson;
+}
+
+.colorDarkblue {
+    background-color: darkblue;
+}
+
+.colorGray {
+    background-color: gray;
+}
+
+.colorGold {
+    background-color: gold;
+}
+
+.colorGreen {
+    background-color: green;
+}
+
+.colorOrange {
+    background-color: orange;
+}
+
+.colorPurple {
+    background-color: purple;
 }
