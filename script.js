@@ -1,4 +1,5 @@
 const grid = document.querySelector("#grid");
+const gridHeight = grid.clientHeight;
 console.log(grid);
 
 let lines = 16;
@@ -54,8 +55,8 @@ function changeWidth(lines) {
     console.log(x);
 
     for (let i = 0; i < x.length; ++i) {
-        x[i].style.width = ((960 / lines).toString()).concat("px");
-        x[i].style.height = ((960 / lines).toString()).concat("px");
+        x[i].style.width = ((gridHeight / lines).toString()).concat("px");
+        x[i].style.height = ((gridHeight / lines).toString()).concat("px");
     }
 }
 
